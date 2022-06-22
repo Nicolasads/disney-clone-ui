@@ -5,6 +5,47 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 64px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 0;
+  }
+`;
+
+export const Form = styled.form`
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: 48px;
+  column-gap: 24px;
+  padding-right: 60px;
+  margin-top: 28px;
+
+  @media (max-width: 650px) {
+    padding-right: 0px;
+  }
+`;
+
+export const Input = styled.input`
+  border: 0;
+  height: 100%;
+  flex: 1;
+  border-radius: 6px;
+  padding: 0 16px;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+
+  ::placeholder {
+    color: #fff;
+  }
+`;
+
+export const SubmitButton = styled.button`
+  background: var(--linear);
+  width: 48px;
+  border: 0;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  font-weight: 700;
 `;
 
 export const ImageLogo = styled.img``;
@@ -62,14 +103,33 @@ export const Navigation = styled.nav.attrs((props) => ({
   height: 100%;
   background: rgba(11, 46, 91, 0.92);
   backdrop-filter: blur(5.5px);
+  overflow: auto;
 
-  padding-top: 66px;
-  padding-left: 54px;
+  padding: 66px 60px 32px 54px;
 
   transition: all 0.5s;
 
   &.active {
     transform: translateX(-660px);
+  }
+
+  @media (max-height: 750px) {
+    padding: 70px 40px 40px;
+    overflow: scroll;
+    padding-right: 0;
+  }
+
+  @media (max-width: 768px) {
+    width: 100vw;
+    right: -100vw;
+
+    &.active {
+      transform: translateX(-100vw);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 65px 16px 40px;
   }
 `;
 
@@ -85,11 +145,18 @@ export const Ul = styled.ul`
   gap: 24px 16px;
   margin-top: 48px;
   margin-right: 60px;
+
+  @media (max-width: 650px) {
+    grid-template-columns: 1fr;
+    margin-right: 0;
+  }
 `;
 
 export const PlayIcon = styled.img``;
 
-export const Li = styled.li`
+export const Li = styled.li.attrs((props) => ({
+  className: props.className,
+}))`
   list-style: none;
 
   display: flex;
@@ -107,12 +174,25 @@ export const Li = styled.li`
 
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
-  width: 265px;
+  /* width: 265px; */
   height: 150px;
 
   position: relative;
   padding-bottom: 16px;
   padding-left: 10px;
+
+  &.movie_active {
+    button {
+      display: none;
+      visibility: hidden;
+    }
+
+    img {
+      filter: grayscale(100);
+      opacity: 0.4;
+      transition: all 0.5s;
+    }
+  }
 
   :hover {
     button {

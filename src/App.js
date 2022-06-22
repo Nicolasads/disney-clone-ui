@@ -56,7 +56,7 @@ function App() {
         />
       </ImageDiv>
 
-      <Header changeMovie={(id) => changeMovie(id)} />
+      <Header changeMovie={(id) => changeMovie(id)} activeMovie={movieId} />
 
       <Main>
         <Section>

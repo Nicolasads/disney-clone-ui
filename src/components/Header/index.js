@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import {
+  Form,
   HeaderContainer,
   Icon,
   ImageLogo,
+  Input,
   Li,
   MovieCategoryList,
   MovieImage,
@@ -13,13 +15,14 @@ import {
   Navigation,
   PlayButtonList,
   Span,
+  SubmitButton,
   Ul,
 } from "./styles";
 import logo from "../../assets/logo.svg";
 import movies from "../../json/movies.json";
 import playButton from "../../assets/icon-play-button.png";
 
-export default function Header({ changeMovie }) {
+export default function Header({ changeMovie, activeMovie }) {
   const [open, setOpen] = useState(false);
 
   const imageUrlSmall = "https://image.tmdb.org/t/p/w500/";
@@ -50,10 +53,20 @@ export default function Header({ changeMovie }) {
       <Navigation className={open ? "active" : ""}>
         <MoviesText>Movies</MoviesText>
 
+        <Form>
+          <Input type="text" placeholder="Add movie" />
+          <SubmitButton type="submit">+</SubmitButton>
+        </Form>
+
         <Ul>
           {movies.map((movies) => (
-            <Li thumb={imageUrlSmall + movies?.backdrop_path} key={movies.id}>
-              <MovieCategoryList>{movies?.genres[0]?.name}</MovieCategoryList>
+            <Li
+              key={movies.id}
+              className={activeMovie === movies.id ? "movie_active" : ""}
+            >
+              <MovieCategoryList className="movie_title">
+                {movies?.genres[0]?.name}
+              </MovieCategoryList>
               <MovieNameList> {movies?.title} </MovieNameList>
 
               <PlayButtonList>
