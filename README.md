@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Disney+ UI Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![plot](./.github/imagem2.png)
 
-## Available Scripts
+Um pequeno projeto de design do Disney+, desenvolvido em
+ReactJS utilizando Styled-Components.
 
-In the project directory, you can run:
+Este projeto foi baseado no canal do Leo Vargas no Youtube
 
-### `npm start`
+[Canal do Leo Vargas](https://www.youtube.com/c/LeoVargas)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Bibliotecas utilizadas
 
-### `npm test`
+- [Styled-Components](https://styled-components.com/) (Estilizações)
+- [Axios](https://axios-http.com/ptbr/docs/intro) (Requisições api)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Instalação
 
-### `npm run build`
+Para utilizar este projeto, abra seu terminal e digite
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ou se preferir, utilize o
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+yarn install
+```
 
-### `npm run eject`
+# Utilização de Api
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![plot](./.github/imagem3.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Este projeto utiliza a api do TheMovieDB, para utilizar, você deve cadastrar uma conta no site - [Clicando no link](https://www.themoviedb.org/signup)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- após fazer o cadastro e em seguida fazer o login, clique no seu usuário, depois em configurações, API e copie a "Chave da API (v3 Auth)"
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Fazendo isso, entre no projeto e na raíz do diretório crie um arquivo .env e nele coloque
 
-## Learn More
+```bash
+ REACT_APP_API_KEY='SUA_CHAVE_API'
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Depois de completar estes passos, digite
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
 
-### Code Splitting
+ou
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+yarn start
+```
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+E divirta-se! 😀
